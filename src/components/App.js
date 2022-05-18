@@ -6,7 +6,7 @@ import ResponseList from './ResponseList';
 const App = () => {
     const { Configuration, OpenAIApi } = require("openai");
     const [responses, setResponses] = useState([]);
-    // const [inquiryHistory, setInquiryHistory] = useState([{}]);
+    const [inquiryHistory, setInquiryHistory] = useState([{}]);
 
     const configuration = new Configuration({
         apiKey: process.env.REACT_APP_OPENAI_API_KEY,
@@ -29,10 +29,11 @@ const App = () => {
         // const response = "\nA wedding can be any color scheme you want as long as it works with your wedding theme. Here are three color schemes for weddings:\n\n1. A neutral color scheme with pops of color.\n\n2. A pastel color scheme with a touch of color.\n\n3. A colorful, fun color scheme.";
         // const response = "\n1. A light and airy color scheme that incorporates whites, light blues, and light purples.\n2. A romantic and bright color scheme with pink, peach, and light coral.\n3. A classic and sophisticated color scheme with black, navy, and light gray.";
         setResponses(response);
-        // setInquiryHistory([{prompt: textInput, response: response}, ...inquiryHistory])
+        setInquiryHistory([{prompt: textInput, response: response}, ...inquiryHistory])
     };
     
     console.log("DATAA: ", responses);
+    console.log("INQ HIST: ", inquiryHistory);
 
     return (
         <div className="ui centered aligned container">
@@ -41,7 +42,7 @@ const App = () => {
                 <TextArea onAiReqSubmit={onTextSubmit} />
                 <ResponseList 
                     responses={responses} 
-                    // inquiryHistory={inquiryHistory}
+                    inquiryHistory={inquiryHistory}
                 />
             </div>
         </div>
