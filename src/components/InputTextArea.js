@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 
-const TextArea = ({ onAiReqSubmit }) => {
+const InputTextArea = ({ onAiReqSubmit }) => {
     const [textInput, setTextInput] = useState('');
 
     const onInputChange = (event) => {
@@ -16,7 +16,7 @@ const TextArea = ({ onAiReqSubmit }) => {
         <div className="ui segment">
             <form className="ui form" onSubmit={onSubmit}>
                 <div className="field">
-                    <label>Enter Prompt</label>
+                    <label>What is your product?</label>
                     <input 
                         type="text" 
                         value={textInput} 
@@ -31,4 +31,4 @@ const TextArea = ({ onAiReqSubmit }) => {
     );
 };
 
-export default TextArea;
+export default InputTextArea;
