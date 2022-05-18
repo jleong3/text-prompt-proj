@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-const ResponseList = ({ responses }) => {
+const ResponseList = ({ responses, inquiryHistory }) => {
     const newLineTxt = (stringText) => {
         if (stringText.includes("\n")) {
             return stringText.split(/\r?\n/).map(str => <p>{str}</p>);
@@ -14,6 +14,11 @@ const ResponseList = ({ responses }) => {
             <div className="ui segment">
                 <h1>Responses</h1>
                 {newLineTxt(responses)}
+                {/* <div>
+                    {inquiryHistory.map( ({ prompt, response }) => (
+                        <p key={prompt}>Prompt: {prompt} <br/> Response: {response}</p>
+                    ) )}
+                </div> */}
             </div>
         </div>
     );
