@@ -14,11 +14,11 @@ const ResponseList = ({ responses, inquiryHistory }) => {
             <div className="ui segment">
                 <h1>Responses</h1>
                 {newLineTxt(responses)}
-                {/* <div>
+                <div>
                     {inquiryHistory.map( ({ prompt, response }) => (
                         <p key={prompt}>Prompt: {prompt} <br/> Response: {response}</p>
                     ) )}
-                </div> */}
+                </div>
             </div>
         </div>
     );
