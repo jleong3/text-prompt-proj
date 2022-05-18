@@ -4,7 +4,6 @@ const SearchBar = ({ onAiReqSubmit }) => {
     const [textInput, setTextInput] = useState('');
 
     const onInputChange = (event) => {
-        console.log("TEXT INPUT old: ", textInput);
         setTextInput(event.target.value);
     };
 
@@ -24,6 +23,9 @@ const SearchBar = ({ onAiReqSubmit }) => {
                         onChange={onInputChange}
                     />
                 </div>
+                <button class="ui primary button">
+                    Enter
+                </button>
             </form>
         </div>
     );

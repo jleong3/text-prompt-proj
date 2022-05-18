@@ -1,44 +1,37 @@
-import React, { useState } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import SearchBar from './SearchBar';
 import ResponseList from './ResponseList';
 
+
 const App = () => {
+    const { Configuration, OpenAIApi } = require("openai");
     const [responses, setResponses] = useState([]);
 
-    const onTextSubmit = (textInput) => {
-        console.log("Text Submitted: ", textInput);
-        // api req here 
-        const response = {
-            data: {
-                items: [
-                    {
-                        first: "first 1",
-                        last: "last 1",
-                        id: 1, 
-                    },
-                    {
-                        first: "first 2",
-                        last: "last 2",
-                        id: 2, 
-                    },
-                    {
-                        first: "first 3",
-                        last: "last 3",
-                        id: 3, 
-                    }
-                ]
-            }
-        }
+    const configuration = new Configuration({
+        apiKey: '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',
+    }); 
+    const openai = new OpenAIApi(configuration);
 
-        console.log("DATAA: ", response.data.items);
-        setResponses(response.data.items)
+    const onTextSubmit = async (textInput) => {
+        console.log("Text Submitted: ", textInput);
+        const response = await openai.createCompletion("text-curie-001", {
+            prompt: textInput,
+            temperature: 0.7,
+            max_tokens: 256,
+            top_p: 1,
+            frequency_penalty: 0,
+            presence_penalty: 0,
+        })
+        setResponses(response.data.choices[0].text);
     };
+    
+    
+    console.log("DATAA: ", responses);
 
     return (
         <div className="ui container">
             <SearchBar onAiReqSubmit={onTextSubmit} />
             <ResponseList responses={responses} />
-            <p>I have {responses.length} responses.</p>
         </div>
     );
 
