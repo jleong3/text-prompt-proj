@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'; 
-import SearchBar from './SearchBar';
+import React, { useState } from 'react'; 
+import TextArea from './TextArea';
 import ResponseList from './ResponseList';
 
 
@@ -8,7 +8,7 @@ const App = () => {
     const [responses, setResponses] = useState([]);
 
     const configuration = new Configuration({
-        apiKey: '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',
+        apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     }); 
     const openai = new OpenAIApi(configuration);
 
@@ -25,12 +25,12 @@ const App = () => {
         setResponses(response.data.choices[0].text);
     };
     
-    
+
     console.log("DATAA: ", responses);
 
     return (
         <div className="ui container">
-            <SearchBar onAiReqSubmit={onTextSubmit} />
+            <TextArea onAiReqSubmit={onTextSubmit} />
             <ResponseList responses={responses} />
         </div>
     );

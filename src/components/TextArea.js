@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 
-const SearchBar = ({ onAiReqSubmit }) => {
+const TextArea = ({ onAiReqSubmit }) => {
     const [textInput, setTextInput] = useState('');
 
     const onInputChange = (event) => {
@@ -13,7 +13,7 @@ const SearchBar = ({ onAiReqSubmit }) => {
     };
 
     return (
-        <div className="search-bar ui segment">
+        <div className="ui segment">
             <form className="ui form" onSubmit={onSubmit}>
                 <div className="field">
                     <label>Enter Prompt</label>
@@ -31,4 +31,4 @@ const SearchBar = ({ onAiReqSubmit }) => {
     );
 };
 
-export default SearchBar;
+export default TextArea;
