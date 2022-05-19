@@ -13,24 +13,28 @@ const ResponseList = ({ responses, inquiryHistory }) => {
             <p>I have {responses.length} responses.</p>
             <div className="ui segment">
                 <h1>History</h1>
-                {newLineTxt(responses)}
+                
                 <div>
                     {inquiryHistory.map( ({ prompt, response }) => (
                         <div key={prompt} className="">
                             <div className="ui grid">
-                                <div className="two wide column">
-                                    <h3>Prompt: </h3>
-                                </div>
-                                <div className="fourteen wide column">
-                                    <p>{prompt}</p>
+                                <div className="row"> 
+                                    <div className="four wide column">
+                                        <h3>Prompt: </h3>
+                                    </div>
+                                    <div className="twelve wide column">
+                                        <p>{prompt}</p>
+                                    </div>
                                 </div>
                             </div>
                             <div className="ui grid">
-                                <div className="two wide column">
-                                    <h3>Response: </h3>
-                                </div>
-                                <div className="fourteen wide column">
-                                    <p>{response}</p>
+                                <div className="row"> 
+                                    <div className="four wide column">
+                                        <h3>Response: </h3>
+                                    </div>
+                                    <div className="twelve wide column">
+                                        <p>{newLineTxt(responses)}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

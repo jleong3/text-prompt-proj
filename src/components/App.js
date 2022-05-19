@@ -1,16 +1,16 @@
 import React, { useState } from 'react'; 
+import { Segment } from 'semantic-ui-react';
 import CurrentResponse from './CurrentResponse';
 import InputTextArea from './InputTextArea';
-import NavHeader from './NavHeader';
+// import NavHeader from './NavHeader';
 import ResponseList from './ResponseList';
-
 
 const App = () => {
     // Commenting out API call to prevent too many requests. Using mock data instead. 
 
     // const { Configuration, OpenAIApi } = require("openai");
     const [responses, setResponses] = useState([]);
-    const [inquiryHistory, setInquiryHistory] = useState([{}]);
+    const [inquiryHistory, setInquiryHistory] = useState([]);
 
     // const configuration = new Configuration({
     //     apiKey: process.env.REACT_APP_OPENAI_API_KEY,
@@ -45,28 +45,29 @@ const App = () => {
 
     return (
         <>
-            <NavHeader />
-            <div className="ui container">
+            <Segment padded color="purple">TextGenerator</Segment>
+            {/* <NavHeader /> */}
+            <div className="ui container"> 
                 <h1>Welcome!</h1>
                 {/* Ideas: */}
                 {/* product decriptions */}
                 {/* ad */}
                 {/* taglines */}
-                <div class="ui placeholder segment">
-                    <div class="ui two column very relaxed stackable grid">
-                        <div class="column">
+                <div className="ui placeholder segment">
+                    <div className="ui two column very relaxed stackable grid">
+                        <div className="column">
                             <h2>How can we help you and your business?</h2>
                             <h3>Create amazing marketing text with our text generator!</h3>
-                            <div class="ui form">
+                            <div className="ui form">
                                 <InputTextArea onAiReqSubmit={onTextSubmit} />
                             </div>
                         </div>
-                        <div class="middle aligned column">
+                        <div className="ui middle aligned column">
                             <CurrentResponse />
                             <ResponseList responses={responses} inquiryHistory={inquiryHistory} />
                         </div>
                     </div>
-                    <div class="ui vertical divider"></div>
+                    <div className="ui vertical divider"></div>
                 </div>
 
             </div>

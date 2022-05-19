@@ -23,7 +23,7 @@ const InputTextArea = ({ onAiReqSubmit }) => {
                         onChange={onInputChange}
                     />
                 </div>
-                <button className="ui primary button">
+                <button className="ui basic purple fluid button">
                     Enter
                 </button>
             </form>
