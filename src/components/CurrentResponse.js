@@ -7,9 +7,13 @@ const CurrentResponse = ({ responses }) => {
             <div>
                 <h1>Response</h1>
                 <div className="ui segment">
-                    <h1>TAG</h1>
-                    <h2>ADVERTISING TEXT</h2>
-                    <p>Product Description</p>
+                    {responses.length > 1 ? 
+                        <div>
+                            <h2>Your Marketing Text:</h2>
+                            <p>{responses}</p>
+                        </div> 
+                        : <p>Enter your product above to view a generated marketing text!</p>
+                    }
                 </div>
             </div>
         </div>

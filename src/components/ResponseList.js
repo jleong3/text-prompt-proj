@@ -10,13 +10,12 @@ const ResponseList = ({ responses, inquiryHistory }) => {
 
     return (
         <div className="ui container">
-            <p>I have {responses.length} responses.</p>
             <div className="ui segment">
                 <h1>History</h1>
                 
                 <div>
-                    {inquiryHistory.map( ({ prompt, response }) => (
-                        <div key={prompt} className="">
+                    {inquiryHistory.map( ({ prompt, response, key }) => (
+                        <div key={key} className="">
                             <div className="ui grid">
                                 <div className="row"> 
                                     <div className="four wide column">
@@ -33,7 +32,7 @@ const ResponseList = ({ responses, inquiryHistory }) => {
                                         <h3>Response: </h3>
                                     </div>
                                     <div className="twelve wide column">
-                                        <p>{newLineTxt(responses)}</p>
+                                        <p>{newLineTxt(response)}</p>
                                     </div>
                                 </div>
                             </div>
