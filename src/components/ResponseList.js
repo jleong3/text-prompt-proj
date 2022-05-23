@@ -9,8 +9,8 @@ const ResponseList = ({ responses, inquiryHistory }) => {
     }
 
     return (
-        <div className="ui container">
-            <p>I have {responses.length} responses.</p>
+        <div className="ui container" id="past-inquiries">
+            <h2 id="center-text">Past Inquiries</h2>
             <div className="ui segment">
                 <h1>Responses</h1>
                 {newLineTxt(responses)}
