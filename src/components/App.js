@@ -61,11 +61,11 @@ const App = () => {
 
     return (
         <>
-            <Segment padded color="purple">TextGenerator</Segment>
+            <Segment padded color="blue">TextGenerator</Segment>
             <div className="ui container"> 
-                <h1>Create amazing marketing text with our text generator!</h1> {/* center this */}
-                <div className="ui placeholder segment">
-                    <Grid columns='one' divided>
+                <h1 id="center-text">Create amazing marketing text with our text generator!</h1>
+                <div className="ui placeholder segment" id="input-container">
+                    <Grid columns='one'>
                         <Grid.Row>
                             <Grid.Column>
                                 <div className="ui form">
@@ -73,6 +73,10 @@ const App = () => {
                                 </div>
                             </Grid.Column>
                         </Grid.Row>
+                    </Grid>
+                </div>
+                <div className="ui placeholder segment" id="blue-border">
+                    <Grid columns='one'>
                         <Grid.Row>
                             <Grid.Column>
                                 <CurrentResponse responses={responses} />
@@ -81,7 +85,6 @@ const App = () => {
                         </Grid.Row>
                     </Grid>
                 </div>
-
             </div>
         </>
     );

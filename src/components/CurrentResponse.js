@@ -1,16 +1,16 @@
 import React from 'react'; 
+import '../css/CustomStyles.css'
 
 const CurrentResponse = ({ responses }) => {
 
     return (
         <div className="ui container">
-            <div>
-                <h1>Response</h1>
+            <div id="center-text">
+                <h1>Results</h1>
                 <div className="ui segment">
                     {responses.length > 1 ? 
                         <div>
-                            <h2>Your Marketing Text:</h2>
-                            <p>{responses}</p>
+                            <p id="current-response">{responses}</p>
                         </div> 
                         : <p>Enter your product above to view a generated marketing text!</p>
                     }

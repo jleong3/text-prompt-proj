@@ -71,21 +71,7 @@ const InputTextArea = ({ onAiReqSubmit }) => {
                         Generate
                     </Button.Content>
                 </Button>
-                {/* <Button basic circular color='blue' content='Generate' type='submit' /> */}
             </Form>
-            {/* <form className="ui form" onSubmit={onSubmit}>
-                <div className="field">
-                    <label>What is your product?</label>
-                    <input 
-                        type="text" 
-                        value={textInput} 
-                        onChange={onInputChange}
-                    />
-                </div>
-                <button className="ui basic purple fluid button">
-                    Enter
-                </button>
-            </form> */}
         </div>
     );
 };
