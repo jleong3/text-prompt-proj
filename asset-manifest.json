@@ -8,9 +8,9 @@
   "runtime~main.js": "/text-prompt-proj/static/js/runtime~main.3a088da0.js",
   "runtime~main.js.map": "/text-prompt-proj/static/js/runtime~main.3a088da0.js.map",
   "static/media/semantic.min.css": "/text-prompt-proj/static/media/brand-icons.c5ebe0b3.ttf",
-  "static/css/1.a392bffb.chunk.css.map": "/text-prompt-proj/static/css/1.a392bffb.chunk.css.map",
   "static/css/main.4a95bcae.chunk.css.map": "/text-prompt-proj/static/css/main.4a95bcae.chunk.css.map",
+  "static/css/1.a392bffb.chunk.css.map": "/text-prompt-proj/static/css/1.a392bffb.chunk.css.map",
   "index.html": "/text-prompt-proj/index.html",
-  "precache-manifest.7edde784257daf4d809752f8fc8f1b85.js": "/text-prompt-proj/precache-manifest.7edde784257daf4d809752f8fc8f1b85.js",
+  "precache-manifest.b10730219d11c483c5b9c8842e2aa380.js": "/text-prompt-proj/precache-manifest.b10730219d11c483c5b9c8842e2aa380.js",
   "service-worker.js": "/text-prompt-proj/service-worker.js"
 }
